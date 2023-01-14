@@ -20,6 +20,7 @@
             <% } %>
             let formData = new FormData();
             formData.append('<%= theme.comments.waline.imageUploader?.fileName %>', file);
+            formData.append('<%= theme.comments.waline.imageUploader?.tokenName %>', '<%= theme.comments.waline.imageUploader?.token %>');
             return fetch('<%= theme.comments.waline.imageUploader?.api %>',{
               method: 'POST',
               body: formData,
